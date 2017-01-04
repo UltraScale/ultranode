@@ -17,10 +17,11 @@ sudo apt-get install build-essential linux-headers-$(uname -r)
 **Then:** Install from the addon CD: ```sudo /media/cdrom/VBoxLinuxAdditions.run```
 
 
-Add in /etc/fstab:
+Now add the folowing in the file /etc/rc.local
 ```
-workbench   /workbench   vboxsf   uid=1000,gid=1000,auto,rw  0   0
+sudo mount -t vboxsf -o uid=1000,gid=1000  workbench /home/[username]/workbench
+exit 0
 ```
 
-And don't forget to create the directory /workbench with rw acces for all
+And don't forget to create the directory ~/workbench and configure automount in the VirtualBox settings
 
